@@ -1,0 +1,35 @@
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+  }
+  
+  .filter-buttons {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .filter-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    background-color: #3f7f3f;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-buttons button.reset {
+    background-color: #cc3f3f;
+  }
+  
+  .filter-buttons button:hover {
+    opacity: 0.85;
+  }
+  

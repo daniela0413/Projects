@@ -1,0 +1,10 @@
+.App {
+  padding: 20px;
+}
+
+body {
+  font-family: 'Segoe UI', 'Noto Color Emoji', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02rem;
+}

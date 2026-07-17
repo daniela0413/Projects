@@ -1,0 +1,122 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green:       #1D9E75;
+  --green-light: #E1F5EE;
+  --green-dark:  #085041;
+  --blue:        #185FA5;
+  --blue-light:  #E6F1FB;
+  --amber:       #EF9F27;
+  --amber-light: #FAEEDA;
+  --red:         #A32D2D;
+  --red-light:   #FCEBEB;
+  --bg:          #f0f7f4;
+  --surface:     #FFFFFF;
+  --border:      rgba(0,0,0,0.09);
+  --text:        #1a1a18;
+  --text-muted:  #6b6b67;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --mono:        'IBM Plex Mono', monospace;
+  --sans:        'DM Sans', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--sans);
+  color: var(--text);
+  min-height: 100vh;
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: #f0f7f4;
+  background-image:
+    /* frunze SVG inline ca data URI */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M20 100 Q10 60 50 20 Q30 60 70 55 Q50 80 20 100Z' fill='%231D9E75' fill-opacity='0.06'/%3E%3Cpath d='M90 10 Q110 40 80 80 Q95 45 55 50 Q70 25 90 10Z' fill='%231D9E75' fill-opacity='0.05'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath d='M10 180 Q0 120 60 60 Q30 110 90 100 Q60 140 10 180Z' fill='%231D9E75' fill-opacity='0.04'/%3E%3Cpath d='M150 20 Q190 70 160 140 Q165 90 110 110 Q130 65 150 20Z' fill='%231D9E75' fill-opacity='0.04'/%3E%3Ccircle cx='100' cy='100' r='3' fill='%231D9E75' fill-opacity='0.07'/%3E%3C/svg%3E");
+  background-size: 120px 120px, 200px 200px;
+  background-position: 0 0, 60px 60px;
+}
+
+button { font-family: var(--sans); cursor: pointer; }
+input  { font-family: var(--sans); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* ── Hero banner sub header ── */
+.gh-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0F6E56 0%, #1D9E75 50%, #5DCAA5 100%);
+  padding: 2rem 1.5rem 2.5rem;
+  color: #fff;
+}
+
+.gh-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cpath d='M0 200 Q20 120 80 80 Q40 130 120 110 Q80 160 0 200Z' fill='white' fill-opacity='0.07'/%3E%3Cpath d='M60 200 Q90 140 160 100 Q110 145 180 120 Q140 165 60 200Z' fill='white' fill-opacity='0.05'/%3E%3Cpath d='M200 200 Q210 150 270 120 Q235 155 290 140 Q265 175 200 200Z' fill='white' fill-opacity='0.06'/%3E%3Cpath d='M250 0 Q290 50 260 120 Q275 60 220 90 Q240 40 250 0Z' fill='white' fill-opacity='0.05'/%3E%3Cpath d='M-10 0 Q30 50 10 130 Q20 55 70 80 Q40 35 -10 0Z' fill='white' fill-opacity='0.06'/%3E%3Ccircle cx='150' cy='40' r='60' fill='white' fill-opacity='0.03'/%3E%3Ccircle cx='50' cy='150' r='40' fill='white' fill-opacity='0.03'/%3E%3Ccircle cx='260' cy='160' r='50' fill='white' fill-opacity='0.03'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+}
+
+.gh-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gh-hero-title {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+}
+
+.gh-hero-sub {
+  font-size: 13px;
+  opacity: 0.82;
+  margin-bottom: 1.25rem;
+}
+
+.gh-hero-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.gh-hero-stat-val {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.gh-hero-stat-lbl {
+  font-size: 11px;
+  opacity: 0.75;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* animatie frunze decorative hero */
+.gh-leaf {
+  position: absolute;
+  opacity: 0.13;
+  animation: leafFloat 8s ease-in-out infinite;
+}
+
+.gh-leaf-1 { top: -10px; right: 80px;  width: 120px; animation-delay: 0s; }
+.gh-leaf-2 { top: 20px;  right: 220px; width: 80px;  animation-delay: 2s; transform: scaleX(-1); }
+.gh-leaf-3 { bottom: -5px; right: 30px; width: 100px; animation-delay: 4s; transform: rotate(30deg); }
+
+@keyframes leafFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33%       { transform: translateY(-8px) rotate(3deg); }
+  66%       { transform: translateY(4px) rotate(-2deg); }
+}
+
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
